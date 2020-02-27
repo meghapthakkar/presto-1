@@ -474,7 +474,7 @@ public final class HiveUtil
             validate(deserializer);
         }
         catch (SerDeException | RuntimeException e) {
-            throw new RuntimeException("error initializing deserializer: " + deserializer.getClass().getName(), e);
+            throw new RuntimeException("error initializing deserializer: " + deserializer.getClass().getName() + " for table: " + schema.getProperty("name"), e);
         }
     }
 
